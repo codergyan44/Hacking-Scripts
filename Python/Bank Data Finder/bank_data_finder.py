@@ -3,6 +3,16 @@ import requests
 import pandas as pd
 
 def Bank_Data_Finder(IFSC_Code):
+    """Fetches and returns detailed information about a bank branch using its IFSC code.
+    Parameters:
+        - IFSC_Code (str): The IFSC code of the bank branch for which information is being retrieved.
+    Returns:
+        - list: A list containing detailed information about the bank branch, which includes the bank name, branch, address, city, state, IFSC code, contact information, and the availability of services like UPI, RTGS, NEFT, and IMPS.
+    Processing Logic:
+        - Constructs the URL by appending the IFSC code to a predefined base URL to fetch bank details via an API request.
+        - Retrieves data in JSON format and extracts specific details about the bank branch.
+        - Checks the availability of various banking services and formats how this information is appended to the results.
+        - Handles exceptions gracefully, printing an error message if the request fails."""
     try:
         #fetching the data
         url = 'https://ifsc.razorpay.com/' + 'SBIN0000813'
@@ -37,6 +47,15 @@ def Bank_Data_Finder(IFSC_Code):
 
 def run():
  #function for streamlit
+    """This function serves as a Streamlit interface to find and display bank data using an IFSC code.
+    Parameters:
+        - None
+    Returns:
+        - None
+    Processing Logic:
+        - Retrieves bank information using an IFSC code entered by the user.
+        - Displays the bank data in a table if the IFSC code is valid.
+        - Shows a warning message if the IFSC code is invalid."""
     st.title("Bank Data Finder")
 
     ## IFSC

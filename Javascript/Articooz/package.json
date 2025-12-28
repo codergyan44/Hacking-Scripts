@@ -29,7 +29,7 @@
     "mongodb": "^3.6.2",
     "nodemon": "^2.0.4",
     "sanitize-html": "^2.1.0",
-    "socket.io": "^2.3.0",
+    "socket.io": "^3.0.0",
     "validator": "^13.1.17",
     "webpack": "^4.44.2",
     "webpack-cli": "^3.3.12"
